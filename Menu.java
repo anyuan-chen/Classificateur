@@ -19,13 +19,14 @@ public class Menu{
     ImageIcon iconPlay = new ImageIcon("Icons/playButtonIMG.png");
     ImageIcon iconRules = new ImageIcon("Icons/rulesButtonIMG.png");
     ImageIcon iconBckgnd = new ImageIcon("Icons/beachBkgnd.gif");
-    /**
-    public void paintComponent(Graphics g) {
-      super.paintComponent(g);
-
-      // Draw the background image.
-      g.drawImage(iconBckgnd, 0, 0, this);
-    }*/
+    
+    frame = new JFrame() { 
+      private Image backgroundImage = ImageIO.read(new File("Icons/beachBkgnd.gif"));
+      public void paint( Graphics g ) { 
+        super.paint(g);
+        g.drawImage(backgroundImage, 0, 0, null);
+      }
+    };
 
     //JLabel background = new JLabel();
     //background.setIcon(iconBckgnd);
