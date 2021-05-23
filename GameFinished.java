@@ -15,16 +15,22 @@ public class GameFinished {
 
     public GameFinished(JFrame frame, int score){
         this.jf = frame;
+
+        ImageIcon iconMenu = new ImageIcon("Icons/tomenuButtonIMG.png");
+
         jf.getContentPane().removeAll(); //removes all elements from the main menu        jf.revalidate();
         JLabel scoreLabel = new JLabel("Score: " + Integer.toString(score));
         finalScore.add(scoreLabel);
-        JButton exitToMenu = new JButton("Exit To Menu");
+        JButton exitToMenu = new JButton(iconMenu);
         exitToMenu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 System.out.println("back to menu");
                 Menu m = new Menu(jf);
             }
         });
+
+        exitToMenu.setBorder(null);
+        exitToMenu.setContentAreaFilled(false);
         
 
         jf.add(finalScore);

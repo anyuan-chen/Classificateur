@@ -19,18 +19,8 @@ public class Menu{
     ImageIcon iconPlay = new ImageIcon("Icons/playButtonIMG.png");
     ImageIcon iconRules = new ImageIcon("Icons/rulesButtonIMG.png");
     ImageIcon iconBckgnd = new ImageIcon("Icons/beachBkgnd.gif");
+    JLabel backgroundLabel = new JLabel(iconBckgnd);
     
-    frame = new JFrame() { 
-      private Image backgroundImage = ImageIO.read(new File("Icons/beachBkgnd.gif"));
-      public void paint( Graphics g ) { 
-        super.paint(g);
-        g.drawImage(backgroundImage, 0, 0, null);
-      }
-    };
-
-    //JLabel background = new JLabel();
-    //background.setIcon(iconBckgnd);
-
     // Play Button
     JButton playButton = new JButton(iconPlay);
 		playButton.addActionListener(new ActionListener(){
@@ -62,6 +52,7 @@ public class Menu{
     panel.add(title);
     buttonPanel.add(playButton);
     buttonPanel.add(instructionsButton);
+    //frame.setContentPane(new JLabel(img));
     frame.setLocationRelativeTo(null);
 		frame.setVisible(true);    
     frame.add(panel);
